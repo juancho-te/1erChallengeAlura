@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href=".\ccs\style.css">
+		<title>First sprint: text encoder/decoder</title>
+		
+	</head>
+
+	<body>
+		<header>
+			<img src="./media/logo.png">
+		</header>
+
+		<section>
+			<div class="bloque1">
+				<textarea class="textOriginal">Ingrese el texto aquí</textarea>
+			</div>
+			<div class="bloque2">		
+				<img class="imgBuscar" src="./media/muñeco.png">
+
+			</div>
+		</section>
+
+		<button class="coderBtn">Coder</button>
+		<button class="decoderBtn">Decoder</button>
+	</body>
+
+	<script type="text/javascript">
+
+			var buttonCoder = document.querySelector(".coderBtn");
+			var buttondeCoder = document.querySelector(".decoderBtn");
+			//var  muestra=document.getElementById("imagen");
+			//muestra.style.display = "none";
+
+
+			var buffer='';
+
+			var text1 = document.querySelector(".textOriginal");		
+			var text2 = document.querySelector(".result");
+			var caracter="";
+			//text2.style.display = "none";
+
+
+
+			function codificar(){
+				buffer="";
+				for (var a=0;a<text1.value.length;a++){
+					caracter=text1.value[a];
+					switch (caracter){
+						case 'a':
+							buffer+='ai';
+						break;
+						case 'e':
+							buffer+='enter';
+						break;
+						case 'i':
+							buffer+='imes';
+						break;
+						case 'o':
+							buffer+='ober';
+						break;
+						case 'u':
+							buffer+='ufat';
+						break;
+
+						default:
+							buffer+=caracter;
+						break;
+					}
+				}
+				console.log(buffer);
+				text2.value=buffer;
+				return;
+			}
+
+			function decodificar(){
+				
+				text2 = document.querySelector(".result");
+				while (text2.value.match("ai")!=null   ||  text2.value.match("enter")!=null   ||  text2.value.match("imes")!=null || text2.value.match("ober")!=null  ||  text2.value.match("ufat")!=null){
+					text2.value=text2.value.replace("ai","a");	
+					text2.value=text2.value.replace("enter","e");	
+					text2.value=text2.value.replace("imes","i");	
+					text2.value=text2.value.replace("ober","o");
+					text2.value=text2.value.replace("ufat","u");
+				}
+				return;
+			}
+
+			buttonCoder.onclick=codificar;
+			buttondeCoder.onclick=decodificar;
+
+	</script>
+</html>
