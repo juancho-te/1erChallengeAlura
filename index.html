@@ -14,23 +14,41 @@
 		</header>
 
 		<section>
-			<div class="bloque1">
-				<textarea class="textOriginal">Ingrese el texto aquí</textarea>
-			</div>
-			<div class="bloque2">		
-				<img class="imgBuscar" src="./media/muñeco.png">
+			<div class="container">
+				<div class="bloque1">
+					<textarea class="textOriginal">Ingrese el texto aquí</textarea>
+				</div>
+				<div class="bloque2">		
+					
+					<!--<textarea class="result">Ingrese el texto aquí</textarea>-->
+					<img class="imgBuscar" src="./media/Muñeco.png">
 
+				</div>
 			</div>
+
 		</section>
 
-		<button class="coderBtn">Coder</button>
-		<button class="decoderBtn">Decoder</button>
+
+		<footer>
+			<div class="advertencia"> 
+				<img class="alerta" src="./media/alert.png">
+				Solo minusculas y si n acento 
+			</div>
+			<button class="coderBtn">Encriptar</button>
+			<button class="decoderBtn">Desencriptar</button>
+		</footer>
+
+
 	</body>
 
 	<script type="text/javascript">
 
 			var buttonCoder = document.querySelector(".coderBtn");
 			var buttondeCoder = document.querySelector(".decoderBtn");
+			var imagen = document.getElementById('.imgBuscar');
+
+            imagen.parentNode.removeChild(imagen);
+			
 			//var  muestra=document.getElementById("imagen");
 			//muestra.style.display = "none";
 
@@ -72,6 +90,8 @@
 				}
 				console.log(buffer);
 				text2.value=buffer;
+				otro.innerHTML="<img class='imgBuscar' src=''./media/muñeco.png'>";
+	
 				return;
 			}
 
