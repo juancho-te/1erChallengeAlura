@@ -18,11 +18,11 @@
 				<div class="bloque1">
 					<textarea class="textOriginal">Ingrese el texto aquí</textarea>
 				</div>
-				<div class="bloque2">		
-					
-					<!--<textarea class="result">Ingrese el texto aquí</textarea>-->
-					<img class="imgBuscar" src="./media/Muñeco.png">
-
+				<div class="bloque2">							
+					<textarea class="result"></textarea> -->
+						<p class="imgBuscar">  
+							<img  src="./media/Muñeco.png">
+						</p>
 				</div>
 			</div>
 
@@ -45,23 +45,14 @@
 
 			var buttonCoder = document.querySelector(".coderBtn");
 			var buttondeCoder = document.querySelector(".decoderBtn");
-			var imagen = document.getElementById('.imgBuscar');
-
-            imagen.parentNode.removeChild(imagen);
-			
-			//var  muestra=document.getElementById("imagen");
-			//muestra.style.display = "none";
-
 
 			var buffer='';
 
 			var text1 = document.querySelector(".textOriginal");		
 			var text2 = document.querySelector(".result");
 			var caracter="";
-			//text2.style.display = "none";
 
-
-
+		
 			function codificar(){
 				buffer="";
 				for (var a=0;a<text1.value.length;a++){
@@ -90,8 +81,6 @@
 				}
 				console.log(buffer);
 				text2.value=buffer;
-				otro.innerHTML="<img class='imgBuscar' src=''./media/muñeco.png'>";
-	
 				return;
 			}
 
